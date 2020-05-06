@@ -1,24 +1,29 @@
+//importar modulos
 const express = require('express');
 const path = require('path');
+const exphbs = require('express-handlebars');
 
+//importarr productos
+const products = require('./products'); 
+
+//instanciar servidor de express
 const app = express();
 
+//motor de render para handlebars
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
+//configurar ruta incial
 app.use(express.static('public'));
 
+
+//main
 app.get('/', function (req, res) {
-    console.log('hola en la consola');
-    // res.send('hola mami linda');
+    var context = {
+        list: products,
+    }
 
-    res.sendFile(path.join(__dirname, '/public/index.html'));
-});
-
-app.get('/contacto', function (req, res) {
-    console.log('hola en contacto');
-    res.send('pagina de contacto');
-});
-
-app.get('/sobre-nosotros', function (req, res) {
-    res.send('Texto bien makia');
+    res.render('list', context);
 });
 
 app.listen(3000, function () {
