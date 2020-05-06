@@ -4,7 +4,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 
 //importarr productos
-const products = require('./products'); 
+const products = require('./products');
 
 //instanciar servidor de express
 const app = express();
@@ -13,7 +13,7 @@ const app = express();
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-//configurar ruta incial
+//configurar ruta publica
 app.use(express.static('public'));
 
 
