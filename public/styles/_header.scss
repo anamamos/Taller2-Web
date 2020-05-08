@@ -1,139 +1,526 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 90%;
-    height: 10%;
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
-    position: relative;
-  
-    &__filter {
-      background: none;
-      border: none;
-      img {
-        width: 70%;
-      }
-    }
-    &__sort {
-      background: none;
-      border: none;
-      img {
-        width: 70%;
-      }
-    }
-    &__logo {
-      margin-top: 10px;
-      width: 70px;
-      height: 20px;
-    }
-  
-    &__buttons {
-      img {
-        width: 40px;
-      }
-    }
-  
-    /* NAVIGATION */
-    &__list {
-      margin-top: 20px;
-      margin-right: 0%;
-      align-content: space-between;
-      position: relative;
-      transition: all 0.4s ease;
-  
-      & a {
-        font-size: 12pt;
-        text-decoration: none;
-        color: white;
-        position: relative;
-        align-content: space-between;
-        padding: 20px 2em;
-        cursor: pointer;
-        outline: none;
-        background: none;
-      }
-      & a::after {
-        content: "";
-        display: block;
-        height: 0.3em;
-        background: #ff302a;
-        position: absolute;
-        width: 100%;
-        left: 0px;
-        top: -1%;
-        transition: transform 0.3s ease;
-        transform: scale(0, 1);
-      }
-  
-      & a:hover::after {
-        transform: scale(1, 1);
-      }
-  
-      & a:focus::after {
-        transform: scale(1, 1);
-      }
-  
-      &--active::after {
-        transform: scale(1, 1);
-      }
-      /* NAV RESPONSIVE */
-      @media (max-width: 500px) {
-        & {
-          position: absolute;
-          width: 100%;
-          top: 50px;
-          left: 0px;
-          opacity: 0;
-          display: flex;
-          flex-direction: column;
-          pointer-events: none;
-          transform: translate(-100%, 0%);
-  
-          & a {
-            font-size: 12pt;
-            text-decoration: none;
-            color: blue;
-            position: relative;
-            align-content: space-between;
-            padding: 20px 2em;
-            cursor: pointer;
-            outline: none;
-            border: none;
-            background: none;
-          }
-          &--active {
-            opacity: 1;
-            pointer-events: all;
-            transform: translate(0%, 0%);
-            background: rgba(255, 255, 255, 0.9);
-          }
-        }
-      }
-    }
-    &__btn {
-      background: none;
-      border: none;
-  
-      & img {
-        width: 70%;
-      }
-    }
-    @media (max-width: 500px) {
-      .header__btn {
-        display: none;
-      }
-    }
-    &__responsive {
-      background: none;
-      border: none;
-      display: none;
-      fill: #ff302a;
-      @media (max-width: 500px) {
-        & {
-          display: block;
-        }
-      }
-    }
+  display: flex;
+  background-color: #00ff03;
+  flex-direction: column;
+  width: 100%;
+}
+
+.logo {
+
+  transition: width .5s ease-in-out;
+  width: 500px;
+  margin: auto;
+  align-content: center;
+}
+
+
+.header-banner {
+
+  width: 100%;
+  height: 220px;
+  display: flex;
+  transition: height .5s ease-in-out;
+  flex-direction: column;
+}
+
+.header-second {
+
+  display: flex;
+  flex-direction: row;
+
+  height: 800px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+
+  background-image: url("../images/recursos/banner.png");
+
+  transition: height .5s ease-in-out;
+
+}
+
+/* izquierdis */
+.fotoIzquierda {
+  width: 50%;
+
+
+}
+
+.fotoIzquierdaUno {
+  transition: width .5s ease-in-out;
+  position: absolute;
+  width: 280px;
+  margin-top: 320px;
+  cursor: pointer;
+  right: 82%;
+
+
+}
+
+.fotoIzquierdaDos {
+  transition: width .5s ease-in-out;
+  position: absolute;
+  width: 250px;
+  right: 81%;
+
+  cursor: pointer;
+  margin-top: 80px;
+}
+
+.fotoIzquierdaTres {
+  transition: width .5s ease-in-out;
+  position: relative;
+  left: 50%;
+  top: 50px;
+  transform: translate(-50%, 0);
+  width: 550px;
+  cursor: pointer;
+}
+
+/* derechita */
+.fotoDerecha {
+  width: 50%;
+}
+
+.fotoDerechaUno {
+  transition: width .5s ease-in-out;
+
+  position: absolute;
+  width: 200px;
+  margin-top: 120px;
+  cursor: pointer;
+  right: 10%;
+}
+
+.fotoDerechaDos {
+  transition: width .5s ease-in-out;
+
+  position: absolute;
+  width: 200px;
+  margin-top: 270px;
+  cursor: pointer;
+  right: 5%;
+
+}
+
+.fotoDerechaTres {
+  transition: width .5s ease-in-out;
+
+  position: relative;
+  left: 50%;
+  top: 200px;
+  transform: translate(-50%, 0%);
+  width: 550px;
+  cursor: pointer;
+}
+
+/* parte de productos */
+
+.header-third {
+  display: flex;
+  justify-content: center;
+}
+
+.product-sale-preview {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 700px;
+  justify-content: space-between;
+
+}
+
+.product-sale-preview-first {
+  display: flex;
+  width: 60%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("../images/recursos/chaqueta/blanca.png");
+}
+
+.product-sale-preview-second {
+  display: flex;
+  width: 40%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("../images/recursos/chaqueta/azul1.png");
+}
+
+/* productos varios */
+
+.carrusel {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 700px;
+
+}
+
+.carrusel-uno {
+  width: 33%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("../images/recursos/pantalon/blancoverde.png");
+}
+
+.carrusel-dos {
+  width: 33%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("../images/recursos/pantalon/negromorado.png");
+}
+
+.carrusel-tres {
+  width: 33%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("../images/recursos/pantalon/negroverde.png");
+}
+
+/* Parte del blog */
+
+.blog {
+  display: flex;
+  height: 80px;
+  background-color: #00ff03;
+  justify-content: center;
+}
+
+.blog-titulo {
+  color: black;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-size: 80px;
+  text-align: center;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.blog-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 700px;
+  justify-content: space-between;
+  background-color: #00ff03;
+}
+
+.blog-item-img {
+  margin-top: 20px;
+  width: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("../images/recursos/blog.png");
+
+}
+
+.blog-item-text {
+  margin-top: 200px;
+
+  width: 50%;
+
+  color: black;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-size: 32px;
+  text-align: left;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.footer {
+  display: flex;
+  height: auto;
+  background-color: black;
+
+}
+
+.footer-info {
+  width: 50%;
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-size: 20px;
+  text-align: left;
+  transition: font-size 0.5s ease-in-out;
+
+}
+
+.footer-nl {
+  width: 50%;
+  color: white;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-size: 15px;
+  text-align: left;
+  transition: font-size 0.5s ease-in-out;
+
+}
+
+.navegacion {
+  margin: auto;
+}
+
+.navegacion--links {
+  color: black;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-size: 24px;
+  transition: font-size 0.5s ease-in-out;
+}
+
+.header-third-tittle {
+  color: black;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-size: 80px;
+  text-align: center;
+  transition: font-size 0.5s ease-in-out;
+}
+
+
+
+/* //transicion entre el movimiento raro de las imagenes// */
+
+@media (max-width: 1150px) {
+  .header-second {
+
+      height: auto;
+      width: 100%;
+
+      transition: height .5s ease-in-out;
+
   }
+
+  .fotoIzquierda {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .fotoDerecha {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .fotoIzquierdaUno {
+      transition: width .5s ease-in-out;
+      margin-top: 0;
+      width: 80%;
+      display: flex;
+
+      position: static;
+      left: 0%;
+      top: 0%;
+      transform: translate(0%, 0%);
+
+  }
+
+  .fotoIzquierdaDos {
+      margin-top: 0;
+      transition: width .5s ease-in-out;
+
+      width: 80%;
+      position: static;
+      left: 0%;
+      top: 0%;
+      transform: translate(0%, 0%);
+      display: flex;
+  }
+
+  .fotoIzquierdaTres {
+      margin-top: 0;
+      transition: width .5s ease-in-out;
+      width: 80%;
+      position: static;
+      left: 0%;
+      top: 0%;
+      transform: translate(0%, 0%);
+      display: flex;
+  }
+
+  .fotoDerechaUno {
+      transition: width .5s ease-in-out;
+      margin-top: 0;
+      width: 80%;
+      position: static;
+      left: 0%;
+      top: 0%;
+      transform: translate(0%, 0%);
+      display: flex;
+  }
+
+  .fotoDerechaDos {
+      margin-top: 0;
+      transition: width .5s ease-in-out;
+      width: 80%;
+      position: static;
+      left: 0%;
+      top: 0%;
+      transform: translate(0%, 0%);
+      display: flex;
+  }
+
+  .fotoDerechaTres {
+      margin-top: 0;
+      transition: width .5s ease-in-out;
+      width: 80%;
+      position: static;
+      left: 0%;
+      top: 0%;
+      transform: translate(0%, 0%);
+      display: flex;
+  }
+
+
+}
+
+/* //pantalla mediana// */
+
+@media (max-width: 580px) {
+
+
+  .logo {
+      transition: width .5s ease-in-out;
+      width: 250px;
+  }
+
+  .header-banner {
+      transition: height .5s ease-in-out;
+      height: 100px;
+  }
+
+  .navegacion--links {
+      transition: font-size 0.5s ease-in-out;
+      font-size: 15px;
+  }
+
+  .header-third-tittle {
+      font-size: 60px;
+  }
+
+  .fotoIzquierdaUno {
+      width: 100%;
+  }
+
+  .fotoIzquierdaDos {
+      width: 100%;
+  }
+
+  .fotoIzquierdaTres {
+      width: 100%;
+  }
+
+  .fotoDerechaUno {
+      width: 100%;
+  }
+
+  .fotoDerechaDos {
+      width: 100%;
+  }
+
+  .fotoDerechaTres {
+      width: 100%;
+  }
+
+  .product-sale-preview {
+      width: 100%;
+      height: 300px;
+  }
+
+  .carrusel {
+      height: 300px;
+  }
+
+  .blog {
+      height: 80px;
+
+  }
+
+  .blog-titulo {
+      font-size: 60px;
+      height: 20px;
+  }
+
+  .blog-item {
+      height: 400px;
+  }
+
+  .blog-item-img {
+      margin-top: 0px;
+  }
+
+  .blog-item-text {
+      margin-top: 30px;
+      font-size: 20px;
+      transition: font-size 0.5s ease-in-out;
+  }
+
+  .footer-info {
+      font-size: 15px;
+  }
+
+}
+
+
+/* //pantalla pequeña// */
+
+@media (max-width: 350px) {
+  .logo {
+      transition: width .5s ease-in-out;
+      width: 150px;
+  }
+
+  .header-third-tittle {
+      font-size: 40px;
+  }
+
+  .blog {
+      height: 50px;
+
+  }
+
+  .blog-titulo {
+      font-size: 40px;
+      height: 20px;
+  }
+
+  .blog-item {
+      height: 260px;
+  }
+
+  .blog-item-img {
+      margin-top: 0px;
+  }
+
+  .blog-item-text {
+      margin-top: 30px;
+      font-size: 12px;
+      transition: font-size 0.5s ease-in-out;
+  }
+
+  .footer-info {
+      font-size: 8px;
+  }
+
+  .footer-nl {
+      font-size: 10px;
+  }
+}

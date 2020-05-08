@@ -1,7 +1,7 @@
 $tipo-titulos: "Montserrat", sans-serif;
 $tipo-texto: "Quicksand", sans-serif;
 $color-blanco: white;
-$color-blue: #134595;
+$color-blue: #00ff03;
 $color-red: #eb5866;
 $color-aquamarine: #43cdec;
 $color-otherWhite: #f6f6f6;
@@ -43,7 +43,7 @@ html {
   
   body {
     font-family: $tipo-texto;
-    background-color: blue;
+    background-color: #00ff03;
   }
 @import 'header';
 @import 'banner';
