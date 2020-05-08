@@ -1,0 +1,121 @@
+/* BANNER */
+
+/* Gneral Banner */
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    margin-left: 10%;
+    margin: 0px auto;
+    transition: transform 0.3s ease-in-out;
+  
+    &--active {
+      margin-top: 80%;
+    }
+  
+    /* Top banner */
+  
+    &__top {
+      width: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Bottom banner */
+  
+    &__bottom {
+      font-family: $tipo-titulos;
+      font-size: 200%;
+      color: $color-red;
+      margin: 5% 0;
+    }
+  }
+  
+  /* Block top */
+  
+  /* Rigth seccion */
+  
+  .btop__rigth {
+    width: 25%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    & h1 {
+      font-family: $tipo-titulos;
+      font-weight: bolder;
+      font-size: 700%;
+      color: white;
+      z-index: -1;
+      margin: 5pt;
+    }
+  }
+  
+  /* Center seccion */
+  
+  .btop__center {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .center__back {
+    height: 100%;
+    margin: 0 auto;
+    background-image: url("../images/nike_banner.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    z-index: -2;
+    position: relative;
+  }
+  
+  .center__image {
+    width: 90%;
+    transform: rotate(-30deg);
+    z-index: -1;
+    position: relative;
+  }
+  
+  /* left seccion */
+  
+  .btop__left {
+    width: 25%;
+    margin: 0;
+    height: 100%;
+    position: relative;
+    display: flex;
+  
+    & h2 {
+      font-family: $tipo-titulos;
+      font-size: 250%;
+      font-style: normal;
+      font-weight: bold;
+      color: $color-aquamarine;
+      position: absolute;
+      text-align: end;
+      margin-bottom: 5%;
+    }
+  }
+  
+  /* Banner responsive */
+  
+  @media (max-width: 500px) {
+    .btop__rigth h1 {
+      font-size: 200%;
+    }
+    .btop__left h2 {
+      font-size: 100%;
+    }
+    .banner__bottom {
+      font-size: 100%;
+    }
+  }

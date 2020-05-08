@@ -1,31 +1,56 @@
-//importar modulos
+//-----------Importar modulos e instancias-----//
+// importar express
 const express = require('express');
-const path = require('path');
-const exphbs = require('express-handlebars');
+//Intanciar bodyparser despues de instalarlo en git bash
+const bodyParser = require('body-parser');
 
-//importarr productos
-const products = require('./products');
+//Instanciar mongo
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+//llamar las rutas
+const createRoutes = require('./routes.js');
+//linea de handle
+var exphbs  = require('express-handlebars');
 
-//instanciar servidor de express
-const app = express();
+//Instanciar app
+const app=express();
 
-//motor de render para handlebars
+//Establecer la carpeta public como estatica
+app.use(express.static('public'));
+app.use(express.urlencoded({extended:true}));
+
+//lineas de handlebars
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-//configurar ruta publica
-app.use(express.static('public'));
 
 
-//main
-app.get('/', function (req, res) {
-    var context = {
-        list: products,
-    }
+//-----------Vamos a usar Mongo-----//
 
-    res.render('list', context);
+
+//Para usar Mongo: crear variables (Paso 1)
+const url = 'mongodb://localhost:27017';
+const dbName = 'store';
+const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+
+
+//Para usar Mongo: conectar (Paso 2)
+
+  client.connect(function(err) {
+    // asegurarnos de que no existe un error
+    assert.equal(null, err);
+
+    console.log('conexión');
+
+    // conectamos el cliente a la base de datos que necesitamos
+    const db = client.db(dbName);
+
+    createRoutes(app, db);
+
+
+// inicar servidor en el puerto definido anteriormente
+app.listen(3000, () => {
+    console.log("Servidor iniciado en el puerto 3000");
 });
 
-app.listen(3000, function () {
-    console.log('servidor iniciado en puerto 3000');
 });

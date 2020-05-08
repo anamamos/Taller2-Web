@@ -1,0 +1,139 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    height: 10%;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+  
+    &__filter {
+      background: none;
+      border: none;
+      img {
+        width: 70%;
+      }
+    }
+    &__sort {
+      background: none;
+      border: none;
+      img {
+        width: 70%;
+      }
+    }
+    &__logo {
+      margin-top: 10px;
+      width: 70px;
+      height: 20px;
+    }
+  
+    &__buttons {
+      img {
+        width: 40px;
+      }
+    }
+  
+    /* NAVIGATION */
+    &__list {
+      margin-top: 20px;
+      margin-right: 0%;
+      align-content: space-between;
+      position: relative;
+      transition: all 0.4s ease;
+  
+      & a {
+        font-size: 12pt;
+        text-decoration: none;
+        color: white;
+        position: relative;
+        align-content: space-between;
+        padding: 20px 2em;
+        cursor: pointer;
+        outline: none;
+        background: none;
+      }
+      & a::after {
+        content: "";
+        display: block;
+        height: 0.3em;
+        background: #ff302a;
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        top: -1%;
+        transition: transform 0.3s ease;
+        transform: scale(0, 1);
+      }
+  
+      & a:hover::after {
+        transform: scale(1, 1);
+      }
+  
+      & a:focus::after {
+        transform: scale(1, 1);
+      }
+  
+      &--active::after {
+        transform: scale(1, 1);
+      }
+      /* NAV RESPONSIVE */
+      @media (max-width: 500px) {
+        & {
+          position: absolute;
+          width: 100%;
+          top: 50px;
+          left: 0px;
+          opacity: 0;
+          display: flex;
+          flex-direction: column;
+          pointer-events: none;
+          transform: translate(-100%, 0%);
+  
+          & a {
+            font-size: 12pt;
+            text-decoration: none;
+            color: blue;
+            position: relative;
+            align-content: space-between;
+            padding: 20px 2em;
+            cursor: pointer;
+            outline: none;
+            border: none;
+            background: none;
+          }
+          &--active {
+            opacity: 1;
+            pointer-events: all;
+            transform: translate(0%, 0%);
+            background: rgba(255, 255, 255, 0.9);
+          }
+        }
+      }
+    }
+    &__btn {
+      background: none;
+      border: none;
+  
+      & img {
+        width: 70%;
+      }
+    }
+    @media (max-width: 500px) {
+      .header__btn {
+        display: none;
+      }
+    }
+    &__responsive {
+      background: none;
+      border: none;
+      display: none;
+      fill: #ff302a;
+      @media (max-width: 500px) {
+        & {
+          display: block;
+        }
+      }
+    }
+  }
