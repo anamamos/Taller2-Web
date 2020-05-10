@@ -1,7 +1,50 @@
-.table {
-    td {
-        border: 1px solid lightblue;
-        margin: 0px;
-        padding: 4px;
+$tipo-titulos: "Montserrat", sans-serif;
+$tipo-texto: "Quicksand", sans-serif;
+$color-blanco: white;
+$color-blue: #00ff03;
+$color-red: #eb5866;
+$color-aquamarine: #43cdec;
+$color-otherWhite: #f6f6f6;
+//---------------TALLER 1----------------------
+/*------------------------
+[TABLE OF CONTENTS]
+    
+
+1. HEADER
+2. BANNER
+3. ADVERTISING
+4. PRESENTATION
+5. GALLERY
+6. PRICING
+7. CALL TO ACTION
+8. FOOTER
+------------------------*/
+
+/* GENERAL */
+
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    a {
+      text-decoration: none;
+      outline: none;
+      background: none;
+      color: none;
     }
-}
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+  }
+  
+  body {
+    font-family: $tipo-texto;
+    background-color: #00ff03;
+  }
+@import 'header';
+@import 'banner';
+@import 'taller2';
