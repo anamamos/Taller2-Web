@@ -19,8 +19,20 @@ app.use(express.static('public'));
 
 //main
 app.get('/', function (req, res) {
+    console.log(req.query);
+
+    var filtered;
+
+    if (req.query.price_lt) {
+        filtered = products.filter(function (productos) {
+            if (productos.price < req.query.price_lt) {
+                return true;
+            }
+        })
+
+    }
     var context = {
-        list: products,
+        list: filtered,
     }
 
     res.render('list', context);

@@ -4,20 +4,34 @@
     <thead>
         <tr>
             <th>#</th>
+            <th>Brand</th>
             <th>Name</th>
+            <th>Images</th>
             <th>Price</th>
-            <th>Raiting</th>
-            <th>Talla</th>
+            <th>Category</th>
+            <th>Rating</th>
+            <th>Size</th>
+            <th>Description</th>
+            <th>Detail One</th>
+            <th>Detail Two</th>
+            <th>Detail Three</th>
         </tr>
     </thead>
     <tbody>
         {{#each list}}
         <tr>
             <td>{{@index}}</td>
+            <td>{{brand}}</td>
             <td>{{ name }}</td>
+            <td>{{ images }}</td>
             <td>{{ price }}</td>
+            <td>{{category}}</td>
             <td>{{ rating }}</td>
-            <td>{{ talla }}</td>
+            <td>{{ size }}</td>
+            <td>{{description}}</td>
+            <td>{{detailOne}}</td>
+            <td>{{detailTwo}}</td>
+            <td>{{detailthree}}</td>
         </tr>
         {{/each}}
     </tbody>
