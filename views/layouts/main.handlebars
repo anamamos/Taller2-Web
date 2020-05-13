@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nike by MJAB</title>
+    <title>Chiangus Anamamos</title>
 
     <!-- Link de la tipografia -->
        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -22,40 +22,28 @@
 
         <!-- Logo -->
         <!-- Navegacion Principal -->
-        <a href="#"> <img class="header__logo" src="/images/ui/logo.png" alt=""></a>
+      <div class="header-banner">
+                <img class="logo" src="/images/recursos/logo.png" alt="logo">
 
-        <nav class="header__list listnav">
-            <a href="/#" class="listnav__a">Home</a>
-             <a href="/store" class="listnav__a">Home</a>
-            <a href="/#presentation" class="listnav__a">Apparel</a>
-            <a href="/#characteristic" class="listnav__a">Blog</a>
+                <nav class="navegacion">
 
-        </nav>
+                    <a href="" class="navegacion--links">Home,</a>
+                    <a href="" class="navegacion--links">Apparel,</a>
+                    <a href="" class="navegacion--links">Blog,</a>
+                    <a href="/store" class="navegacion--links"> Shop</a>
+         
 
-        <section class="header__store">
-         <a class="header__btn" href="/shopping">
-         {{!-- TINES QUE CAMBIARRRRRRR ESTE ICONO --}}
-            <img src="/images/ui/tienda.png" alt=""></a>
-        </a>
-        <a class="header__bag" href="/shopping">
-            <h1>{{cartSize}}</h1>
-        </a>
-        </section>
-       
+                </nav>
+            </div>
 
-
-
-
-        <!-- Responsive -->
-        <button class="header__responsive">
-            <img src="images/menu.png" alt="">
-        </button>
+     
     </header>
     {{!-- Navegacion contextual --}}
     <section class="contextual">
-        <a href="/store/category/Men's Shoe" class="contextual__list">MEN</a>
-        <a href="/store/category/Women's Shoe" class="contextual__list">WOMAN</a>
-        <a href="/store/category/Kid's Shoe" class="contextual__list">KID</a>
+        <a href="/store/category/Tank" class="navegacion--links">Tank,</a>
+        <a href="/store/category/Jeans" class="navegacion--links">Jeans,</a>
+        <a href="/store/category/Graphic Tees" class="navegacion--links">Graphic Tees,</a>
+        <a href="/store/category/Dress" class="navegacion--links">Dress,</a>
 
     </section>
 
@@ -78,7 +66,6 @@
         </section>
 
 
-    <script src="/scrips/javaHome.js"></script>
     <script src="/scrips/javaCart.js"></script>
     <script src="/scrips/javaStore.js"></script>
     <script src="/scrips/addcart.js"></script>

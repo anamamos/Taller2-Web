@@ -1,16 +1,62 @@
 <section class="store">
 
     <section class="store__top">
-        <h1 class="indivi__header">Buy Now</h1>
 
+        <section class="store__top-one">
+            <article>
+                <h1 class="indivi__header">Buy Now</h1>
+            </article>
+            <article>
+                <a class="header__btn" href="/shopping">
+                    {{!-- TINES QUE CAMBIARRRRRRR ESTE ICONO --}}
+                    <img src="/images/ui/tienda.png" alt=""></a>
+                </a>
+                <a class="header__bag" href="/shopping">
+                    <h1>{{cartSize}}</h1>
+                </a>
+            </article>
+        </section>
         {{!-- //----------------------SECCION DE BOTONES------------------------------// --}}
-        <article class="indivi__btns">
-            <button class="header__filter">
-                <img src="/images/ui/filter.png" alt=""></a>
-            </button> <button class="header__sort">
-                <img src="/images/ui/sort.png" alt=""></a>
-            </button>
-        </article>
+        <section class="store__top-two">
+            <h2 class="indivi__header">Filters</h2>
+            <section class="store__top-two__filter">
+                <a href="/store/brand/Pleasures" class="filter__list">Pleasures</a>
+                <a href="/store/brand/Sugar Thrillz" class="filter__list">Sugar Thrillz</a>
+                <a href="/store/brand/Current Mood" class="filter__list">Current Mood</a>
+                <a href="/store/brand/HOROSCOPEZ" class="filter__list">Horoscopez</a>
+
+                <article class="filters__colors">
+
+                    <a href="/store/color/BLACK">
+                        <div class="filters__item" style=" background-color: rgb(5, 5, 5)"></div>
+                    </a>
+                    <a href="/store/color/WHITE">
+                        <div class="filters__item" style=" background-color: #E8E8E8"></div>
+                    </a>
+                    <a href="/store/color/YELLOW">
+                        <div class="filters__item" style=" background-color: rgb(243, 239, 20)"></div>
+                    </a>
+                    <a href="/store/color/Blue">
+                        <div class="filters__item" style=" background-color: #053cc5"></div>
+                    </a>
+                    <a href="/store/color/GREEN">
+                        <div class="filters__item" style=" background-color: rgb(45, 167, 56)"></div>
+                    </a>
+                    <a href="/store/color/PINK">
+                        <div class="filters__item" style=" background-color: rgb(241, 145, 204)"></div>
+                    </a>
+                </article>
+            </section>
+            <section class="store__top-two__sort">
+                <h2 class="indivi__header">Sort</h2>
+                <a href="/store/sort/priceL" class="filter__list">Sort Hight-Low</a>
+                <a href="/store/sort/priceH" class="filter__list">Sort Low-Hight</a>
+                <a href="/store/sort/rating" class="filter__list">Raiting</a>
+                <a href="/store/sort/size" class="filter__list">Size</a>
+
+            </section>
+        </section>
+
     </section>
     {{!-- //----------------------SECCION DE FILTRO------------------------------// --}}
     <section class="store__filter">
@@ -22,27 +68,7 @@
             <a href="/store/type/Basketball" class="filter__list">BASKETBALL</a>
         </article>
         <h2>Colors:</h2>
-        <article class="filters__colors">
 
-            <a href="/store/colors/Black">
-                <div class="filters__item" style=" background-color: rgb(5, 5, 5)"></div>
-            </a>
-            <a href="/store/colors/White">
-                <div class="filters__item" style=" background-color: #E8E8E8"></div>
-            </a>
-            <a href="/store/colors/Marron">
-                <div class="filters__item" style=" background-color: rgb(163, 33, 10)"></div>
-            </a>
-            <a href="/store/colors/Blue">
-                <div class="filters__item" style=" background-color: #053cc5"></div>
-            </a>
-            <a href="/store/colors/Green">
-                <div class="filters__item" style=" background-color: rgb(45, 167, 56)"></div>
-            </a>
-            <a href="/store/colors/Starfish">
-                <div class="filters__item" style=" background-color: rgb(230, 126, 28)"></div>
-            </a>
-        </article>
     </section>
     {{!-- //----------------------SECCION DE ORDENAR------------------------------// --}}
     <section class="store__sort">
@@ -72,17 +98,20 @@
 
                     <article class="top__right">
                         <h2 class="product__header"> {{this.name}}</h1>
-                        <h1 class="product__text"> {{this.category}}</h2>
+                            <h1 class="product__text"> {{this.category}}
+                        </h2>
                         <h1 class="product__text">{{this.price}}</h1>
+                        <h1 class="product__text">{{this.brand}}</h1>
+                        <h1 class="product__text">{{this.detailOne}}</h1>
                     </article>
 
                 </section>
             </a>
-               <a class="store__bag" data-name="{{this._id}}" href="">
-            <p>Buy!</p>
-        </a>
-    </div>
+            <a class="store__bag" data-name="{{this._id}}" href="">
+                <p>Buy!</p>
+            </a>
+        </div>
 
-    {{/each}}
+        {{/each}}
     </section>
 </section>
