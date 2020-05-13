@@ -31,26 +31,26 @@ app.set('view engine', 'handlebars');
 //Para usar Mongo: crear variables (Paso 1)
 const url = 'mongodb://localhost:27017';
 const dbName = 'store';
-const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+const client = new MongoClient(url, { useNewUrlParser: true });
 
 
 //Para usar Mongo: conectar (Paso 2)
 
-  client.connect(function(err) {
-    // asegurarnos de que no existe un error
-    assert.equal(null, err);
+MongoClient.connect(`mongodb+srv://anamamos99:<password>@cluster0-tiuzh.mongodb.net/test?retryWrites=true&w=majority`,
+  {
+    auth: {
+      user: 'anamamos99',
+      password: 'anamamos99'
 
-    console.log('conexión');
+    }
+  },
 
-    // conectamos el cliente a la base de datos que necesitamos
+  function (err, client) {
+    if (err) throw err;
     const db = client.db(dbName);
 
     createRoutes(app, db);
 
-
-// inicar servidor en el puerto definido anteriormente
-app.listen(3000, () => {
-    console.log("Servidor iniciado en el puerto 3000");
-});
-
-});
+    //Iniciar servidor
+    app.listen(process.env.PORT || 3000);}
+);
