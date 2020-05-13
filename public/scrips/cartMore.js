@@ -23,7 +23,7 @@ window.addEventListener('load', function(){
                 total.innerHTML=data.totalC;
 
             });
-            
+            window.location.reload(); 
        
         });
         

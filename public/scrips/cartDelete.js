@@ -21,7 +21,7 @@ window.addEventListener('load', function(){
                     total.innerHTML=data.totalCount;
                 });
 
-           
+                window.location.reload();
 
         });
 
