@@ -21,9 +21,7 @@
         <div class="gallery__mini">
           <img src="/images/{{individual.images.[3]}}">
         </div>
-        <div class="gallery__mini">
-          <img src="/images/{{individual.images.[4]}}">
-        </div>
+        
         {{!-- <div class="gallery__mini" style=" background-image: url(/imagenes/{{imagenes.[2]}})"></div> --}}
       </article>
 
@@ -37,15 +35,17 @@
 
     <section class="indivi__left">
       <article class="left__top top">
-        <h1 class="top__indivi">${{individual.price}}</h1>
+        <h1 class="top__indivi">${{individual.brand}}</h1>
       </article>
       <article class="left__info ">
-        <p class="info__indivi">{{individual.characteristic}} </p>
+        <p class="info__indivi">{{individual.price}} </p>
+        <p class="info__indivi">{{individual.category}} </p>
+        <p class="info__indivi">{{individual.description}} </p>
         <ul class="left__list"></ul>
-        <li class="info__indivi">{{individual.characOne}} </li>
-        <li class="info__indivi">{{individual.characTwo}}
+        <li class="info__indivi">{{individual.detailOne}} </li>
+        <li class="info__indivi">{{individual.detailTwo}}
         </li>
-        <li class="info__indivi">{{individual.characThree}}
+        <li class="info__indivi">{{individual.detailthree}}
         </li>
       </article>
 

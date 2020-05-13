@@ -139,15 +139,15 @@ function createRoutes(app, db) {
                 response.render('store', contexto);
             });
     });
-    //Ruta filtros tipo
-    app.get('/store/type/:type', function (request, response) {
+    //Ruta filtros Jordan - Skate - Bascketball
+    app.get('/store/brand/:brand', function (request, response) {
 
         console.log('Entro al filtro type');
 
-        var type = request.params.type;
+        var brand = request.params.brand;
 
         products.find({
-                type: type
+                brand: brand
             })
             .toArray(function (err, filter) {
                 var contexto = {
@@ -158,14 +158,14 @@ function createRoutes(app, db) {
             });
     });
     //Ruta filtros colores
-    app.get('/store/colors/:colors', function (request, response) {
+    app.get('/store/color/:detailOne', function (request, response) {
 
         console.log('Entro al filtro type');
 
-        var colors = request.params.colors;
+        var detailOne = request.params.detailOne;
 
         products.find({
-                colors: colors
+                detailOne: detailOne
             })
             .toArray(function (err, filter) {
                 var contexto = {
@@ -217,10 +217,29 @@ function createRoutes(app, db) {
 
         console.log('Entro al sort size');
 
-        var price = request.params.price;
+        var size = request.params.size;
 
         products.find().sort({
                 size: 1
+            })
+            .toArray(function (err, filter) {
+                console.log(filter);
+                var contexto = {
+
+                    productsList: filter,
+
+                };
+                response.render('store', contexto);
+            });
+    });
+    app.get('/store/sort/rating', function (request, response) {
+
+        console.log('Entro al sort size');
+
+        var rating = request.params.rating;
+
+        products.find().sort({
+                rating: 1
             })
             .toArray(function (err, filter) {
                 console.log(filter);
